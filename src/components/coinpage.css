@@ -1,0 +1,88 @@
+.divmain{
+    margin-top: 70px;
+    margin-left: 10px;
+}
+.divone{
+    /* background-color: aquamarine; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 40%;
+    gap: 10px;
+    /* background-color: bisque; */
+}
+.divtwo{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+.divthree{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 5px;
+    padding: 0 20px;
+}
+.divcenter{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 3px;
+}
+.divfour{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    /* margin-left: 32%; */
+}
+.divxtra{
+   display: flex;
+   justify-content: flex-start;
+   align-items: center;
+   gap: 2px;
+}
+.divfont{
+    font-size: 1.2rem;
+}
+
+.divcenterfont{
+    font-size: 15px;
+}
+.divfive{
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   gap: 15px;
+}
+.divsix{
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   gap: 140px;
+}
+.line {
+    height: 2px;
+    width: 110px;
+    background-color:#ffc011;
+  }
+  .divwd2{
+    width: 200px;
+    text-align: start;
+  }
+  .divwd1{
+    width: 125px;
+    text-align: start;
+  }
+  .watclist button{
+    width: 400px;
+    border: none;
+    padding: 5px 0;
+    background-color: #ffc011;
+    border-radius: 10px;
+  }
+  
