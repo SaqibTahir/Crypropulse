@@ -113,14 +113,16 @@
     border-radius: 6px;
     background-color: #ffc011;
     font-size: 14px;
-    /* font-weight: bold; */
 }
 .totalpagecss{
     border: 1px solid #ffc011;
     padding: 0 6px;
     border-radius: 6px;
     font-size: 14px;
-    /* font-weight: bold; */
+}
+.giffer-div{
+ margin: 216px 0;
+ margin-left: 610px;
 }
 @media (max-width : 1024px) {
     

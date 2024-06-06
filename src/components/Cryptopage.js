@@ -21,6 +21,7 @@ export default function Cryptopage(props) {
       setgifer(false)
       setCoinname(Response.data)
       setTotalPages(Math.ceil(Response.data.length / itemsPerPage));
+      console.log(Response.data)
 
     })
       .catch((err) => {
@@ -30,6 +31,13 @@ export default function Cryptopage(props) {
 
 
   }, [apikey]);
+
+  // gifer-----------
+  if (gifer) {
+    return <div className='giffer-div'>
+      <Spinner/>
+    </div> ;
+  }
 
   // Pagination handlers
   const nextPage = () => {
@@ -51,15 +59,16 @@ export default function Cryptopage(props) {
     );
   };
   // formet like Billion or million ----------------------
-  const formatMarketCap = (marketCap) => {
-    if (marketCap >= 1e9) {
-      return (marketCap / 1e9).toFixed(2) + ' B';
-    } else if (marketCap >= 1e6) {
-      return (marketCap / 1e6).toFixed(2) + ' M';
-    } else {
-      return marketCap.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
-    }
-  };
+  // const formatMarketCap = (marketCap) => {
+  //   if (marketCap >= 1e9) {
+  //     return (marketCap / 1e9).toFixed(2) + ' B';
+  //   } else if (marketCap >= 1e6) {
+  //     return (marketCap / 1e6).toFixed(2) + ' M';
+  //   } 
+  //   else {
+  //     return marketCap.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+  //   }
+  // };
 
   // calculate 7 days percentage----------------------
   const calculate7DayChange = (percentage24h) => {
@@ -113,8 +122,10 @@ export default function Cryptopage(props) {
             <div className="col hide-6"><span> <FontAwesomeIcon icon={faArrowsSpin} style={{ color: '#ffc011' }} /> Total Supply</span></div>
           </div>
         </div>
-
-        <div className="text-center ">{gifer && <Spinner />}</div>
+ 
+        {/* <div className="giffer-div ">
+          {gifer && <Spinner />}
+          </div> */}
 
       <div className=" wd text-start" style={{ color: props.theme ===    'light' ? 'black' : 'white' }}>
           {/* <Link to='/coinpage' style={{ color: props.theme === 'light' ? 'black' : 'white' }}> */}
@@ -147,11 +158,13 @@ export default function Cryptopage(props) {
                   </div>
                   {/* market cap-------------------------------- */}
                   <div className="col hide-5  ">
-                    <span>{'$' + formatMarketCap(coin.market_cap)}</span>
+                    {/* <span>{'$' + formatMarketCap(coin.market_cap)}</span> */}
+                    <span>{'$' + coin.market_cap}</span>
                   </div>
                   {/* total supply-------------------------------- */}
                   <div className="col-1 text-start hide-6 " >
-                    <span>{formatMarketCap(coin.total_supply)}</span>
+                    {/* <span>{formatMarketCap(coin.total_supply)}</span> */}
+                    <span>{coin.total_supply}</span>
                   </div>
 
                 </div>

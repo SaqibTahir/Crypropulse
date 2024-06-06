@@ -10,20 +10,6 @@ export default function Carousel(props) {
   const [loading, setloading] = useState(false);
   const url ='https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=10&page=1&sparkline=false'
 
-  // const fetchCoinData = async () => {
-  //   const url ='https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=10&page=1&sparkline=false'
-  //   let data = await fetch(url)
-  //   let finaldata=await data.json()
-  //   console.log(finaldata)
-
-  //   try {
-  //     const { data } = await axios.get('https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=10&page=1&sparkline=false');
-  //     setTrending(data);
-  //   } catch (error) {
-  //     console.error('Error fetching coin data:', error);
-  //   }
-  // };
-
   useEffect(() => {
     setloading(true)
     axios.get(url).then((Response)=>{
@@ -36,15 +22,8 @@ export default function Carousel(props) {
     
     
   }, []);
-  // const profitcolor=(colorof)=>{
-  //    if(colorof < 0){
-  //     setcolor('danger')
-  //    }else{
-  //      setcolor('success')
-  //    }
-  // }
   const calculateProfit = (percentage) => {
-    const colorClass = percentage >= 0 ? 'text-primary' : 'text-danger';
+    const colorClass = percentage >= 0 ? 'text-success' : 'text-danger';
     return (
       <span className={colorClass}>
         {percentage >= 0 ? `+${percentage.toFixed(2)}%` : `${percentage.toFixed(2)}%`}

@@ -1,7 +1,6 @@
 import React from 'react'
-import faqimg from './FAQs-cuate.png'
-// import contactimg from './Hidden mining-pana.png'
-import contactimg from './Contact us-amico.png'
+import faqimg from '../images/FAQs-cuate.png'
+import contactimg from '../images/Contact us-amico.png';
 import './Contact.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faHeadset, faEnvelope } from '@fortawesome/free-solid-svg-icons'
