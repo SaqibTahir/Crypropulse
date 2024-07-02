@@ -58,7 +58,7 @@ export default function News(props) {
               <div className="card" style={{ width: '18rem', backgroundColor: props.theme === 'dark' ? ' rgb(36, 36, 36)' : '' }}>
                 <img src={item.imageurl} alt={item.title} className="card-img-top"  />
                 <div className="card-body">
-                  <h5 className="card-title" style={{ color: props.theme === 'dark' ? 'white' : '' }}>{item.title ? item.title.slice(0, 40) : '' || 'No Title'} <span class="badge text-bg-success">{item.categories ? item.categories.slice(0,8):''}</span></h5>
+                  <h5 className="card-title" style={{ color: props.theme === 'dark' ? 'white' : '' }}>{item.title ? item.title.slice(0, 40) : '' || 'No Title'} <span className="badge text-bg-success">{item.categories ? item.categories.slice(0,8):''}</span></h5>
                   <p className="card-text" style={{ color: props.theme === 'dark' ? 'white' : '' }}>{item.body ? item.body.slice(0, 90) : "" || 'No Description Available'}</p>
                   <a href={item.url} target="_blank" rel="noopener noreferrer" className="btn ">
                     Read More

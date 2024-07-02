@@ -6,7 +6,6 @@ import { useState } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {faPaperPlane  } from '@fortawesome/free-solid-svg-icons'
 import axios from 'axios'
-// import { useTypewriter } from 'react-simple-typewriter'
 import Spinner from './Spinner';
 
 export default function Chatbot(props) {
@@ -14,17 +13,6 @@ export default function Chatbot(props) {
  const [answer, setanswer] = useState('')
  const [spinner, setspinner] = useState(false)
   const location = useLocation()
-  // const [typewriter] = useTypewriter({
-  //   words: ['Hey👋 i am here to help you'],
-  //   loop: {},
-  //   typeSpeed: 100,
-  //   deleteSpeed: 40
-  // })
-  // const [typewriter] = useTypewriter({
-  //   words: [generateanswer],
-  //   loop: {},
-  //   typeSpeed: 100,
-  // })
   async function generateanswer(e) {
     setspinner(true);
     e.preventDefault();
@@ -57,7 +45,7 @@ export default function Chatbot(props) {
   return (
     <div className="main-container ">
       <div className={`chat-code fixed bottom ${location.pathname === '/' ? 'hide' : ''} `} data-bs-toggle="offcanvas" data-bs-target="#offcanvasScrolling" aria-controls="offcanvasScrolling"> <img src={botimg} alt="" /></div>
-      <div className="offcanvas offcanvas-end" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1" id="offcanvasScrolling" aria-labelledby="offcanvasScrollingLabel" style={{ backgroundColor: props.theme === 'dark' ? ' rgb(29, 27, 27)' : 'white' }}>
+      <div className="offcanvas offcanvas-end" data-bs-scroll="true" data-bs-backdrop="false"  id="offcanvasScrolling" aria-labelledby="offcanvasScrollingLabel" style={{ backgroundColor: props.theme === 'dark' ? ' rgb(29, 27, 27)' : 'white' }}>
         <div className="offcanvas-header">
           <h3 className="offcanvas-title " id="offcanvasScrollingLabel" style={{ color: '#ffc011' }}>Pulse AI</h3>
           <button type="button" className="btn-close" data-bs-dismiss="offcanvas" aria-label="Close" style={{ filter: props.theme === 'dark' ? 'invert(1)' : 'none' }}></button>

@@ -1,6 +1,6 @@
 import React from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faColonSign, faStar, faBookOpen,faFileLines,faCirclePlay ,faWallet,faCashRegister } from '@fortawesome/free-solid-svg-icons'
+import { faColonSign, faStar, faBookOpen, faFileLines, faCirclePlay, faUser } from '@fortawesome/free-solid-svg-icons'
 import './Navbar.css'
 import { Link } from 'react-router-dom'
 import { useLocation } from 'react-router-dom'
@@ -8,15 +8,15 @@ import { useLocation } from 'react-router-dom'
 
 export default function Navbar(props) {
     const location = useLocation()
-    const handleLogout = () => {
-		localStorage.removeItem("token");
-		window.location.reload();
-	};
-    
+    // const handleLogout = () => {
+    // 	localStorage.removeItem("token");
+    // 	window.location.reload();
+    // };
+
     return (
         <nav style={{ padding: '6px 54px' }} className={`navbar navbar-expand-lg fixed-top navbar-${props.theme} bg-${props.theme}`}>
             <div className="container-fluid ">
-                <Link className="navbar-brand d-flex align-items-center fs-4 fw-bold" to="/"><FontAwesomeIcon icon={faColonSign} className='mx-1 fs-1' style={{ color: '#ffc011' }} />Crypto <span className=' mx-1 fw-light' style={{ color: '#ffc011' }}>Pulse</span></Link>
+                <Link className="navbar-brand d-flex align-items-center fs-4 fw-bold" to="/crypto"><FontAwesomeIcon icon={faColonSign} className='mx-1 fs-1' style={{ color: '#ffc011' }} />Crypto <span className=' mx-1 fw-light' style={{ color: '#ffc011' }}>Pulse</span></Link>
                 <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span className="navbar-toggler-icon"></span>
                 </button>
@@ -31,19 +31,17 @@ export default function Navbar(props) {
                         </div>
                         <div className={`navlist adjust ${location.pathname === '/' || location.pathname === '/Diff' ? 'hidden' : "" || location.pathname === '/contact' ? 'hidden' : ""}`} >
                             <li className="nav-item">
-                                <a aria-current="page" href="/" style={{ color: props.theme === 'light' ? 'black' : 'white' }}>Home</a>
+                                <Link aria-current="page" href="/" style={{ color: props.theme === 'light' ? 'black' : 'white' }} to="/home2">Home</Link>
                             </li>
-                            {/* <li className="nav-item">
-                               
-                            </li> */}
-                            <li className="nav-item dropdown">
+                            <li className="nav-item">
+                                <Link aria-current="page" href="/" style={{ color: props.theme === 'light' ? 'black' : 'white' }} to="/crypto" >CryptoCoins</Link>
+                            </li>
+                            <li className="nav-item dropdown" >
                                 <Link className="nav-link dropdown-toggle" href="/" to='/learn' role="button" data-bs-toggle="dropdown" aria-expanded="false" style={{ color: props.theme === 'light' ? 'black' : 'white' }}>Learn</Link>
-                                <ul className="dropdown-menu">
-                                    <li><Link to='/discription'> <FontAwesomeIcon className='fs-6' style={{ color: '#ffc011' }} icon={faBookOpen} /> Crypto Detail </Link></li>
-                                    <li><Link> <FontAwesomeIcon icon={faFileLines} style={{ color: '#ffc011' }} className='fs-6' />Crypto Articles</Link></li>
-                                    <li>  <Link to='/videos'> <FontAwesomeIcon icon={faCirclePlay} style={{ color: '#ffc011' }} className='fs-6' />Video Tutorials</Link></li>
-                                    <li>   <Link> <FontAwesomeIcon icon={faWallet} style={{ color: '#ffc011' }} className='fs-6' />Crypto wallets</Link></li>
-                                    <li>  <Link> <FontAwesomeIcon icon={faCashRegister} style={{ color: '#ffc011' }} className='fs-6' />Crypto Exchanges</Link></li>
+                                <ul className="dropdown-menu" style={{ backgroundColor: props.theme === 'dark' ? 'rgb(51, 49, 49)' : '' }}>
+                                    <li  ><Link to='/discription' style={{ color: props.theme === 'dark' ? 'white' : '' }}> <FontAwesomeIcon className='fs-6' style={{ color: '#ffc011' }} icon={faBookOpen} /> Crypto Detail </Link></li>
+                                    <li><Link style={{ color: props.theme === 'dark' ? 'white' : '' }} to='/articles'> <FontAwesomeIcon icon={faFileLines} style={{ color: '#ffc011' }} className='fs-6' />Crypto Articles</Link></li>
+                                    <li>  <Link to='/videos' style={{ color: props.theme === 'dark' ? 'white' : '' }}> <FontAwesomeIcon icon={faCirclePlay} style={{ color: '#ffc011' }} className='fs-6' />Video Tutorials</Link></li>
                                 </ul>
                             </li>
                             <li className="nav-item">
@@ -59,13 +57,13 @@ export default function Navbar(props) {
                         </li>
 
                     </div>
-                    <div className="d-flex justify-content-center align-items-center my-2">
+                    <div className="d-flex justify-content-center align-item-center my-2 gap-3">
                         {/* theme button-------- */}
-                        <label className="toggle" for="switch">
+                        <label className="toggle" >
                             <input id="switch" className="input" type="checkbox" onChange={() => props.changetheme()} />
                             <div className="icon icon--moon">
                                 <svg height="32" width="32" fill="rgb(43, 43, 43)" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                    <path clip-rule="evenodd" d="M9.528 1.718a.75.75 0 01.162.819A8.97 8.97 0 009 6a9 9 0 009 9 8.97 8.97 0 003.463-.69.75.75 0 01.981.98 10.503 10.503 0 01-9.694 6.46c-5.799 0-10.5-4.701-10.5-10.5 0-4.368 2.667-8.112 6.46-9.694a.75.75 0 01.818.162z" fill-rule="evenodd"></path>
+                                    <path d="M9.528 1.718a.75.75 0 01.162.819A8.97 8.97 0 009 6a9 9 0 009 9 8.97 8.97 0 003.463-.69.75.75 0 01.981.98 10.503 10.503 0 01-9.694 6.46c-5.799 0-10.5-4.701-10.5-10.5 0-4.368 2.667-8.112 6.46-9.694a.75.75 0 01.818.162z" ></path>
                                 </svg>
                             </div>
                             <div className="icon icon--sun">
@@ -74,7 +72,7 @@ export default function Navbar(props) {
                                 </svg>
                             </div>
                         </label>
-                        <Link className={`${location.pathname === '/' ? 'hidden' : "" }`} ><button type="button" className=" nav-btn " onClick={handleLogout} >Logout</button></Link>
+                        <Link className={`${location.pathname === '/' ? 'hidden' : ' '}`} ><FontAwesomeIcon icon={faUser} className=" nav-btn " type="button"  data-bs-toggle="modal" data-bs-target="#exampleModal" /></Link>
                     </div>
                     <div className=" d-flex justify-content-center align-items-center">
                         <Link className={`${location.pathname === '/' ? '' : "hidden" && location.pathname === '/contact' ? '' : "hidden"}`} to='/Login'>
@@ -83,7 +81,7 @@ export default function Navbar(props) {
                         <Link className={`${location.pathname === '/' ? '' : "hidden" && location.pathname === '/contact' ? '' : "hidden"}`} to='/Signup'><button type="button" className=" nav-btn " >Sign Up</button></Link>
 
                     </div>
-                       
+
 
                 </div>
             </div>

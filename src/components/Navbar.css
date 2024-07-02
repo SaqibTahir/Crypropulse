@@ -52,7 +52,8 @@
 }
 .dropdown-menu{
   width: 230px;
-  height: 200px;
+  height: 120px;
+  background-color: rgb(51, 49, 49);
 }
 .dropdown-menu li a{
   display: flex;

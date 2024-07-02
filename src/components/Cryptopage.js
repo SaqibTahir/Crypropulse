@@ -105,7 +105,7 @@ export default function Cryptopage(props) {
           <h3 style={{ color: props.theme === 'light' ? 'black' : 'white' }}>  All Cryptocurrencies <FontAwesomeIcon className='fs-3' style={{ color: '#ffc011' }} icon={faFire} /></h3>
           <div className="bar form-floating " style={{ color: props.theme === 'light' ? 'black' : 'white' }}>
             <input className="form-control" id="floatingInput" type="text" placeholder='Search coin' onChange={handleSearch} />
-            <label for="floatingInput" className='d-flex justify-content-start align-items-center gap-1'> <FontAwesomeIcon style={{ color: '#ffc011' }} icon={faMagnifyingGlassDollar} />Search coin</label>
+            <label  className='d-flex justify-content-start align-items-center gap-1'> <FontAwesomeIcon style={{ color: '#ffc011' }} icon={faMagnifyingGlassDollar} />Search coin</label>
           </div>
         </div>
 

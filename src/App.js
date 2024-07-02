@@ -22,6 +22,9 @@ import { WatchlistProvider } from './Context/Watchlistcontext';
 import WatchlistPage from './components/WatchlistPage';
 import Videos from './components/Learningdata/Videos';
 import Discription from './components/Learningdata/Discription';
+import Articles from './components/Articles';
+import Logout from './components/Logout';
+import Home2 from './components/Home2';
 
 function App(props) {
   const [theme, settheme] = useState('dark');
@@ -61,8 +64,10 @@ function App(props) {
               element={
                 <React.Fragment>
                   <Navbar theme={theme} changetheme={changetheme} showbar={showbar} />
+                  {/* <Logout theme={theme} changetheme={changetheme} /> */}
                   <div>
                     <WatchlistProvider>
+                    <Logout theme={theme} changetheme={changetheme} />
                       <Routes>
                         <Route
                           path='/'
@@ -82,6 +87,11 @@ function App(props) {
                           path="/crypto"
                           element={<Cryptopage theme={theme} changetheme={changetheme} />}
                         />
+                        <Route
+                          path="/home2"
+                          element={<Home2 theme={theme} changetheme={changetheme} />}
+                        />
+                        
                       
                         <Route
                           path="/coinpage/:coinid"
@@ -90,11 +100,15 @@ function App(props) {
                         <Route path="/cryptonews" element={<News theme={theme} changetheme={changetheme} />} />
                         <Route path="/videos" element={<Videos theme={theme} changetheme={changetheme} />} />
                         <Route path="/discription" element={<Discription theme={theme} changetheme={changetheme} />} />
+                        <Route path="/articles" element={<Articles theme={theme} changetheme={changetheme} />} />
+                        
+                        
+                        
                         
                         
                       </Routes>
                       <div className={`${upbar}`}>
-                        {/* <WatchlistPage theme={theme} changetheme={changetheme} showbar={showbar} closebar={closebar}  /> */}
+                        <WatchlistPage theme={theme} changetheme={changetheme} showbar={showbar} closebar={closebar}  />
                       </div>
                     </WatchlistProvider>
                   </div>
